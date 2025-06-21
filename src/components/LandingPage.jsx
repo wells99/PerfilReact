@@ -1,5 +1,5 @@
 import cafeteria from "../assets/cafeteria.png"
-import jellyfin from "../assets/jellyfin.png"
+import jellyfin from "../assets/jellyfinn.png"
 import mapos from "../assets/mapos.png"
 import todo from "../assets/ToDo.png"
 const LandingPage = () => {
