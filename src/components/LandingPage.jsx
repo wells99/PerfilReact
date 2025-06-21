@@ -1,79 +1,151 @@
-
+import cafeteria from "../assets/cafeteria.png"
+import jellyfin from "../assets/jellyfin.png"
+import mapos from "../assets/mapos.png"
+import todo from "../assets/ToDo.png"
 const LandingPage = () => {
     return (
         <>
-            <nav className="bg-black min-w-screen border-b border-gray-800 text-white flex justify-between h-20 items-center px-16">
-                <div className="font-bold ">
-                    <h1 className="hover:text-blue-500 hover:cursor-pointer text-lg "><span className="text-blue-500">Well</span>  Portfólio</h1>
+            <nav className="bg-black min-w-screen border-b border-gray-800 text-white flex justify-between h-20 items-center px-4">
+
+                <div className="font-bold flex flex-col justify-center items-center gap-2">
+                    <span className="text-green-500">Well</span>
                 </div>
-                <div className="flex items-center justify-evenly gap-4 text-lg font-semibold ">
-                    <p className="hover:text-blue-500 hover:cursor-pointer">Sobre mim</p>
-                    <p className="hover:text-blue-500 hover:cursor-pointer">Projetos</p>
-                    <p className="hover:text-blue-500 hover:cursor-pointer">Serviços</p>
-                    <p className="hover:text-blue-500 hover:cursor-pointer">Skills</p>
+
+                <div className="flex items-center justify-evenly gap-4 text-md font-semibold">
+
+                    <a href="#sobre">
+                        <p className="hover:text-blue-500 hover:cursor-pointer text-nowrap">Sobre mim</p>
+                    </a>
+
+                    <a href="#projetos">
+                        <p className="hover:text-blue-500 hover:cursor-pointer">Projetos</p>
+                    </a>
+
+                    <a href="#services">
+                        <p className="hover:text-blue-500 hover:cursor-pointer">Serviços</p>
+                    </a>
+
+                    <a href="#skills">
+                        <p className="hover:text-blue-500 hover:cursor-pointer">Skills</p>
+                    </a>
+
                 </div>
             </nav>
 
 
             <main>
                 <div className="w-full flex text-white">
-                    <div id="left" className="w-1/2 pl-20 pt-20 bg-black/90">
-                        <p className="text-[#828282] text-xl" ><span className="text-white">Transformando</span>  o seu projeto em <span className="text-green-500 font-semibold">realidade</span>. </p>
-                        <div className="flex gap-4 pt-10">
-                            <button className="bg-purple-900 px-4 py-2 rounded-md hover:bg-purple-900/80 font-semibold">
-                                Download Currículo
-                            </button>
-                            <button className="bg-green-600 hover:bg-green-600/80 px-4 py-2 rounded-md font-semibold">
-                                <a href="(85)999397331">Entrar em contato</a>
+                    <div id="left" className="w-full pl-10 pt-10 bg-black outline-none flex flex-col gap-8">
+                        <div>
+                            <p className=" text-white text-lg">Transformando seu projeto em </p>
+                            <p className="text-blue-600 font-semibold text-xl">Realidade.</p>
+                        </div>
+
+                        <div className="w-34 mb-8">
+
+                            <button className="bg-green-600 hover:bg-green-600/80 hover:scale-105 shadow-green-800 px-4 py-2 rounded-md font-semibold duratio">
+                                <a href="https://wa.me/5585994306038?text=Vi%20seu%20portf%C3%B3lio%2C%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.">Vamos conversar</a>
                             </button>
                         </div>
-                    </div>
-                    <div id="rigth" className="w-1/2 border-xl bg-black">
-                       
-                    </div>
-                </div>
 
-                <div className="bg-black text-white px-20 py-8 text-left">
-                    <h2 className="text-xl font-bold text-center mb-2 ">Sobre Mim</h2>
-                    <p className="text-lg text-neutral-300 ">já a muito tempo envolvido com tecnológia, me tornei técnico em hardware de computadores e após um</p>
-                    <p>período de experiência relevante encontrei muitos problemas por estar apenas com maquinas locais, foi ai que descobri o <span className="text-green-500 font-medium">VERDADEIRO</span> poder da internet</p>
-                    <p>a liberdade digital e a capacidade de encontrar clientes em qualquer lugar do mundo não é mais uma sonho distante, é a realidade em que vivemos hoje.</p>
-                    <p>Garanto estar ao seu lado nessa batalha e juntos atingirmos nossos objetivos.</p>
-                    <p className="font-semibold text-neutral-400">
-                       Seja um<span className="text-green-500">  E-Commerce</span>, <span className="text-yellow-500">Pagina pessoal</span> ou um <span className="text-gray-100">Sistema Empresarial</span> !!
-                    </p>
-                    <p> Entre em contato e vamos usar o <span className="text-red-500 font-medium">PODER</span> da internet para expandir o seu trabalho</p>
-                   
+                    </div>
+
                 </div>
 
 
-                <div className="w-full px-20 py-10 bg-black text-white" id="redesSociais">
-                    
+                <div className="w-full px-20 py-10 bg-black text-white" id="projetos">
+
                     <h2 className="text-xl font-bold text-center mb-10 ">
                         Projetos
                     </h2>
-                    <div className="flex flex-row gap-4 items-center justify-center">
-                        
-                        <div className="w-40 h-40 bg-neutral-700 rounded-lg cursor-pointer hover:bg-neutral-700/80 duration-300 ">
-                            <div id="imagem-projeto " className="h-[80%] "></div>
-                            <p className="text-center font-semibold">nome do projeto</p>
+
+                    <div className="flex flex-col gap-4 items-center justify-center w-full">
+                        <div id="containerProjectThree" className="flex flex-col gap-4 justify-center">
+                            <div id="imgProject">
+                                <a href="https://tocaplay.online/" target="blank">
+                                    <img src={jellyfin} alt="imagem-projeto" className="rounded-lg w-200" />
+                                </a>
+                            </div>
+                            <div id="tecnologias" className="flex flex-row gap-2 h-8 ">
+                                <p className="px-1 py-1 bg-red-700 rounded border border-red-900">VPS</p>
+                                <p className="px-1 py-1 bg-purple-600 rounded border border-purple-800">C#</p>
+                                <p className="px-1 py-1 bg-red-800 rounded border border-red-900">VIM</p>
+                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">LinuxServer</p>
+                                <p className="px-1 py-1  rounded border border-blue-600">Docker</p>
+                            </div>
+                            <div id="descricaoDoProjeto" >
+                                <p><span className="text-neutral-500">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                <p>Implementação de app Open Source em VPS de cliente</p>
+                            </div>
+
+
                         </div>
 
-                          <div className="w-40 h-40 bg-neutral-700 rounded-lg cursor-pointer hover:bg-neutral-700/80 duration-300">
-                            <div id="imagem-projeto " className="h-[80%] "></div>
-                            <p className="text-center font-semibold">nome do projeto</p>
-                        </div>
-                        
-                         <div className="w-40 h-40 bg-neutral-700 rounded-lg cursor-pointer hover:bg-neutral-700/80 duration-300">
-                            <div id="imagem-projeto " className="h-[80%] "></div>
-                            <p className="text-center font-semibold">nome do projeto</p>
+                        <div id="containerProjectOne" className="flex flex-col gap-4 mb-4">
+                            <div id="imgProject" >
+                                <a href="https://coffe-cafe-taupe.vercel.app/" target="blank">
+                                    <img src={cafeteria} alt="imagem-projeto" className="rounded-lg w-200" />
+                                </a>
+                            </div>
+                            <div id="tecnologias" className="flex flex-row gap-2 h-8">
+                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">Html</p>
+                                <p className="px-1 py-1 bg-yellow-500 rounded border border-yellow-600">Javascript</p>
+                                <p className="px-1 py-1 bg-[#00a6f4] rounded border border-[#00a6f4]/80">Tailwind</p>
+                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-600">CSS</p>
+                                <p className="px-1 py-1 bg-green-500 rounded border border-green-600">Node</p>
+                            </div>
+                            <div id="descricaoDoProjeto">
+                                <p>Landing Page de uma cafeteria focando nos produtos mais vendidos.
+                                    Transmitindo a sofisticação e qualidade da cafeteria.
+                                </p>
+                            </div>
+
+
                         </div>
 
-                         <div className="w-40 h-40 bg-neutral-700 rounded-lg cursor-pointer hover:bg-neutral-700/80 duration-300">
-                            <div id="imagem-projeto " className="h-[80%] "></div>
-                            <p className="text-center font-semibold">nome do projeto</p>
+                        <div id="containerProjectFour" className="flex flex-col gap-4 justify-center">
+                            <div id="imgProject" >
+                                <a href="https://tocaplay.online/" target="blank">
+                                    <img src={mapos} alt="imagem-projeto" className="rounded-lg w-200" />
+                                </a>
+                            </div>
+                            <div id="tecnologias" className="flex flex-row gap-2 h-8">
+                                <p className="px-1 py-1 bg-yellow-500 rounded border border-yellow-600">JQuery</p>
+                                <p className="px-1 py-1 bg-pink-500 rounded border border-pink-700">PHP</p>
+                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-600">SQL</p>
+                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-600">Bootstrap</p>
+                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">HTML</p>
+                            </div>
+                            <div id="descricaoDoProjeto" >
+                                <p className="text-nowrap"><span className="text-neutral-500">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                <p>Implementação de sistema Open Source de gerenciamento de Ordens de Serviço e Vendas</p>
+                            </div>
+
+
                         </div>
 
+                        <div id="containerProjectTwo" className="flex flex-col gap-4 justify-center">
+                            <div id="imgProject" >
+                                <a href="https://to-do-react-umber-pi.vercel.app/" target="blank">
+                                    <img src={todo} alt="imagem-projeto" className="rounded-lg w-200" />
+                                </a>
+                            </div>
+                            <div id="tecnologias" className="flex flex-row gap-2 h-8">
+                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-800">WordPress</p>
+                                <p className="px-1 py-1 bg-pink-500 rounded border border-pink-600">PHP</p>
+                                <p className="px-1 py-1  rounded border border-blue-600">Docker</p>
+                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">FireBase</p>
+                            </div>
+                            <div id="descricaoDoProjeto" >
+                                <p>Landing Page de uma cafeteria focando nos produtos mais vendidos.</p>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div id="sobre" className="bg-black text-white px-20 py-8 text-left w-full">
+                        <h2 className="text-xl font-bold text-center mb-2 ">Sobre Mim</h2>
                     </div>
                 </div>
             </main>

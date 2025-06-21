@@ -1,7 +1,3 @@
-// import BoasVindas from "./components/BoasVindas";
-// import { CardDefault } from "./components/Card";
-// import { Aluno, Turma, Professor } from "./components/Classe";
-
 import Perfil from "./components/Perfil";
 import PerfilButton from "./components/PerfilButton";
 import PerfilSecond from "./components/PerfilSecond";
@@ -11,8 +7,10 @@ import LandingPage from "./components/LandingPage";
 const App = () => {
   return (
     <>
+
+    <LandingPage/>
       
-<PerfilSecond
+{/* <PerfilSecond
    fotoPerfil={"https://lh3.googleusercontent.com/a/ACg8ocLQfvC3axFMVDGh_z_z2ohaRP9BlLEGGY7hTDO_PiOdDSZe-5SviQ=s83-c-mo"}
    titulo={"Foto de perfil"}
    nome={"Wellington Matos"}
@@ -36,7 +34,7 @@ const App = () => {
         />
 
 
-</PerfilSecond>        
+</PerfilSecond>         */}
 </>
   );}
 
