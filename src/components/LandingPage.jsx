@@ -1,8 +1,46 @@
+import { useState, useEffect } from "react"
 import cafeteria from "../assets/cafeteria.png"
 import jellyfin from "../assets/jellyfinn.png"
 import mapos from "../assets/mapos.png"
 import todo from "../assets/ToDo.png"
+
 const LandingPage = () => {
+    const [loopNum, setLoopNum] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const phrases = [ "Visibilidade.", "Realidade.", "Escalabilidade."];
+    const [text,setText] = useState('');
+    const [delta,setDelta] = useState(300 - Math.random() * 100);
+    const period = 2000
+
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        },delta)
+        return () => { clearInterval(ticker)};
+    },[text]);
+
+    const tick = () => {
+        let i = loopNum % phrases.length;
+        let fullText = phrases[i];
+        let updatedText = isDeleting ? fullText.substring(0,Number(text.length) - 1) : fullText.substring(0,Number(text.length) + 1);
+        setText(updatedText);
+
+        if (isDeleting) {
+            setDelta(prevDelta => prevDelta/2);
+        }
+
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true);
+            setDelta(period);
+        } else if(isDeleting && updatedText === ''){
+            setIsDeleting(false);
+            setLoopNum(loopNum + 1);
+            setDelta(200);
+        }
+
+    }
+
+
     return (
         <>
             <nav className="bg-black min-w-screen border-b border-gray-800 text-white flex justify-between h-20 items-center px-4">
@@ -37,8 +75,8 @@ const LandingPage = () => {
                 <div className="w-full flex text-white">
                     <div id="left" className="w-full pl-10 pt-10 bg-black outline-none flex flex-col gap-8">
                         <div>
-                            <p className=" text-white text-lg">Transformando seu projeto em </p>
-                            <p className="text-blue-600 font-semibold text-xl">Realidade.</p>
+                            <p className=" text-white text-xl">Transformando seu projeto em </p>
+                            <p className="text-blue-600 font-semibold text-2xl border-r-2 border-blue-500 w-fit ">{text}</p>
                         </div>
 
                         <div className="w-34 mb-8">
