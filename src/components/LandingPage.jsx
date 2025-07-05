@@ -55,27 +55,27 @@ const LandingPage = () => {
             <main>
                 <div className="w-full flex text-white">
                     <div id="left" className="w-full  pt-10 bg-black outline-none flex flex-col gap-8">
-                        <div className="w-full flex flex-col lg:flex-row md:gap-8  items-center justify-center ">
-                            <img src={imagem2} alt="eu" className="w-60 md:w-0"/>
+                        <div className="w-full flex flex-col lg:flex-row md:gap-8 items-center justify-center ">
+                            <img src={imagem2} alt="eu" className="w-60 md:w-0" />
                             <div className="flex flex-col items-center justify-center md:items-start px-2">
                                 <p className=" text-white text-xl mb-2">Transformando seu projeto em </p>
-                            <svg key={phrases[currentPhraseIndex].nome}
-                                className="min-w-fit" 
-                                height="50" 
-                                
-                                fill="none" 
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                {phrases[currentPhraseIndex].svg}
-                            </svg>
-                            
-                        <div className="w-34 mt-8 ">
-                            <button className="bg-blue-700 hover:bg-blue-600/80 hover:scale-105 shadow-green-800 px-4 py-2 rounded-md font-semibold duratio">
-                                <a href="https://wa.me/5585994306038?text=Vi%20seu%20portf%C3%B3lio%2C%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.">Vamos conversar</a>
-                            </button>
-                        </div>
+                                <svg key={phrases[currentPhraseIndex].nome}
+                                    height="50"
+                                    viewBox={`0 0 ${phrases[currentPhraseIndex].box} 50`}
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    className={`block md:pl-0 md:px-auto max-w-full pl-${phrases[currentPhraseIndex].opl}`}
+                                >
+                                    {phrases[currentPhraseIndex].svg}
+                                </svg>
+
+                                <div className="w-34 mt-8 ">
+                                    <button className="bg-blue-700 hover:bg-blue-600/80 hover:scale-105 shadow-green-800 px-4 py-2 rounded-md font-semibold duratio">
+                                        <a href="https://wa.me/5585994306038?text=Vi%20seu%20portf%C3%B3lio%2C%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.">Vamos conversar</a>
+                                    </button>
+                                </div>
                             </div>
-                            <img src={imagem1} alt="eu" className="w-0 lg:w-40"/>
+                            <img src={imagem1} alt="eu" className="w-0 lg:w-40" />
                         </div>
 
                     </div>

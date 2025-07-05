@@ -4,7 +4,7 @@ stroke: rgba(255, 255, 255, 0.7);
 stroke-width: 0.3;
 stroke-dasharray: 220;
 stroke-dashoffset: 220;
-animation: textAnimation 3s ease-in-out 1 forwards;
+animation: textAnimation 2s ease-in-out 1 forwards;
 }
 
 @keyframes textAnimation {
