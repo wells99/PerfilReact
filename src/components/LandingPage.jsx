@@ -83,98 +83,124 @@ const LandingPage = () => {
 
                 <div className="w-full px-20 py-10 bg-black text-white" id="projetos">
                     <h2 className="text-xl font-bold text-center mb-10 ">Projetos</h2>
-                    <div className="flex flex-col gap-4 items-center justify-center w-full">
-                        <div id="containerProjectThree" className="flex flex-col gap-4 justify-center">
-                            <div id="imgProject">
+
+                    <div className="flex flex-col gap-4 items-center justify-center w-full ">
+
+                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
+                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
                                 <a href="https://tocaplay.online/" target="blank">
-                                    <img src={jellyfin} alt="imagem-projeto" className="rounded-lg w-200" />
+                                    <img src={jellyfin} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
-                            <div id="tecnologias" className="flex flex-row gap-2 h-8 ">
-                                <p className="px-1 py-1 bg-red-700 rounded border border-red-900">VPS</p>
-                                <p className="px-1 py-1 bg-purple-600 rounded border border-purple-800">C#</p>
-                                <p className="px-1 py-1 bg-red-800 rounded border border-red-900">VIM</p>
-                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">LinuxServer</p>
-                                <p className="px-1 py-1 rounded border border-blue-600">Docker</p>
-                            </div>
-                            <div id="descricaoDoProjeto" >
-                                <p><span className="text-neutral-500">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
-                                <p>Implementação de app Open Source em VPS de cliente</p>
+                            <div className="flex flex-col justify-start w-full">
+                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
+                                    <p className="px-1 py-1 bg-red-700 rounded border border-red-900">VPS</p>
+                                    <p className="px-1 py-1 bg-purple-600 rounded border border-purple-800">C#</p>
+                                    <p className="px-1 py-1 bg-red-800 rounded border border-red-900">VIM</p>
+                                    <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">LinuxServer</p>
+                                    <p className="px-1 py-1 rounded border border-blue-600">Docker</p>
+                                </div>
+                                <div className="w-full text-sm leading-relaxed">
+                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                    <p>Transposição de um app funcional em produção de um servidor para uma máquina local</p>
+                                    <p>Ajustes de um serviço de arquivos estilo S3 da Amazon chamado</p>
+                                    <p>WASABI STORAGE com RCLONE para servir os vídeos ao app</p>
+                                    <p>Backup e transferência para nova hospedagem com rotina de update</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div id="containerProjectOne" className="flex flex-col gap-4 mb-4">
-                            <div id="imgProject" >
+
+                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
+                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
                                 <a href="https://coffe-cafe-taupe.vercel.app/" target="blank">
-                                    <img src={cafeteria} alt="imagem-projeto" className="rounded-lg w-200" />
+                                    <img src={cafeteria} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
-                            <div id="tecnologias" className="flex flex-row gap-2 h-8">
-                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">Html</p>
-                                <p className="px-1 py-1 bg-yellow-500 rounded border border-yellow-600">Javascript</p>
-                                <p className="px-1 py-1 bg-[#00a6f4] rounded border border-[#00a6f4]/80">Tailwind</p>
-                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-600">CSS</p>
-                                <p className="px-1 py-1 bg-green-500 rounded border border-green-600">Node</p>
-                            </div>
-                            <div id="descricaoDoProjeto">
-                                <p>Landing Page de uma cafeteria focando nos produtos mais vendidos.
-                                    Transmitindo a sofisticação e qualidade da cafeteria.
-                                </p>
+                            <div className="flex flex-col justify-start w-full">
+                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
+                                    <p className="px-1 py-1 bg-orange-500 rounded border border-orange-500">HTML</p>
+                                    <p className="px-1 py-1 bg-yellow-500  rounded border border-yellow-800">JAVASCRIPT</p>
+                                    <p className="px-1 py-1 bg-blue-500 rounded border border-blue-500">TAILWIND</p>
+                                    <p className="px-1 py-1 bg-blue-500 rounded border border-blue-700">CSS</p>
+                                    <p className="px-1 py-1 bg-green-500 rounded border border-green-700">NODE</p>
+                                </div>
+                                <div className="w-full text-sm leading-relaxed">
+                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                    <p>Transposição de um app funcional em produção de um servidor para uma máquina local</p>
+                                    <p>Ajustes de um serviço de arquivos estilo S3 da Amazon chamado</p>
+                                    <p>WASABI STORAGE com RCLONE para servir os vídeos ao app</p>
+                                    <p>Backup e transferência para nova hospedagem com rotina de update</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div id="containerProjectFour" className="flex flex-col gap-4 justify-center">
-                            <div id="imgProject" >
-                                <a href="https://tocaplay.online/" target="blank">
-                                    <img src={mapos} alt="imagem-projeto" className="rounded-lg w-200" />
+
+                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
+                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
+                                <a href="#" target="blank">
+                                    <img src={mapos} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
-                            <div id="tecnologias" className="flex flex-row gap-2 h-8">
-                                <p className="px-1 py-1 bg-yellow-500 rounded border border-yellow-600">JQuery</p>
-                                <p className="px-1 py-1 bg-pink-500 rounded border border-pink-700">PHP</p>
-                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-600">SQL</p>
-                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-600">Bootstrap</p>
-                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">HTML</p>
-                            </div>
-                            <div id="descricaoDoProjeto" >
-                                <p className="text-nowrap"><span className="text-neutral-500">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
-                                <p>Implementação de sistema Open Source de gerenciamento de Ordens de Serviço e Vendas</p>
+                            <div className="flex flex-col justify-start w-full">
+                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
+                                    <p className="px-1 py-1 bg-orange-500 rounded border border-orange-500">HTML</p>
+                                    <p className="px-1 py-1 bg-green-600 rounded border border-green-800">mySQL</p>
+                                    <p className="px-1 py-1 bg-yellow-500 rounded border border-yellow-700">JQuery</p>
+                                    <p className="px-1 py-1 bg-pink-500 rounded border border-pink-700">PHP</p>
+                                </div>
+                                <div className="w-full text-sm leading-relaxed">
+                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                    <p>Implementação de sistema Open Source de gerenciamento de Ordens de Serviço e Vendas</p>
+                                    <p>Esse sistema usa banco de dados relacional mySQL, PHP e JQuery</p>
+                                    <p>Além da Implementação desse sistema em uma hospedagem compartilhada o cliente</p>
+                                    <p>Pediu algumas automações para agilizar o fluxo de vendas e cadastro</p>
+                                    <p>apos a leitura e entendimento das requisiçoes em rotas especificas, manipulei o jquery para que atendesse o pedido do cliente</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div id="containerProjectTwo" className="flex flex-col gap-4 justify-center">
-                            <div id="imgProject" >
+
+                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
+                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
                                 <a href="https://to-do-react-umber-pi.vercel.app/" target="blank">
-                                    <img src={todo} alt="imagem-projeto" className="rounded-lg w-200" />
+                                    <img src={todo} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
-                            <div id="tecnologias" className="flex flex-row gap-2 h-8">
-                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-800">React</p>
-                                <p className="px-1 py-1 bg-pink-500 rounded border border-pink-600">TailwindHP</p>
-                                <p className="px-1 py-1 rounded border border-blue-600">Git</p>
-                                {/* <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">FireBase</p> */}
-                            </div>
-                            <div id="descricaoDoProjeto" >
-                                <p>Landing Page de uma cafeteria focando nos produtos mais vendidos.</p>
+                            <div className="flex flex-col justify-start w-full">
+                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
+                                    <p className="px-1 py-1 bg-blue-700 rounded border border-blue-900">REACT</p>
+                                    <p className="px-1 py-1 bg-blue-500 rounded border border-blue-500">TAILWIND</p>
+                                    <p className="px-1 py-1 rounded border border-blue-600">Git</p>
+                                </div>
+                                <div className="w-full text-sm leading-relaxed">
+                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                    <p>Um ToDo descontraído para anotações básicas utilizando de local storage feito em React, com tailwind e Git para futuros upgrades</p>  
+                                </div>
                             </div>
                         </div>
+
                     </div>
+
                     <div id="sobre" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
                         <h2 className="text-xl font-bold text-center mb-2 ">Sobre Mim</h2>
-                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">Olá, me chamo Wellington 🧑‍💻</h3> 
-                       <div className="flex flex-col w- text-left gap-2 lg:text-lg">
-                         <p>
-                            Tenho 26 anos e mais de cinco anos de experiência em suporte técnico, atualmente adquirindo habilidades como Desenvolvedor Júnior com uma sólida trajetória em tecnologia e atendimento ao cliente.</p>
-                        <p><span className="font-semibold">Fluente em inglês</span> e com experiencia em línguas derivadas do Latim
-                        </p>
-                        <p>Como profissional autônomo,
-                            acumulei experiências valiosas em negociação, vendas,
-                            diagnóstico e reparo de dispositivos móveis e computadores.
-                        </p>
-                        <p>Com um olhar <span className="font-semibold">analítico</span>, visando a <span className="font-semibold">inovação</span>, combinando a <span className="font-semibold">técnica</span> e a 
-                            <span className="font-semibold"> empatia</span> com os usuários assim trazendo criatividade para entregar
-                            soluções eficazes e experiências marcantes.</p>
-                       </div>
+                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">Olá, me chamo Wellington 🧑‍💻</h3>
+                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
+                            <p>
+                                Tenho 26 anos e mais de cinco anos de experiência em suporte técnico, atualmente adquirindo habilidades como Desenvolvedor Júnior com uma sólida trajetória em tecnologia e atendimento ao cliente.</p>
+                            <p><span className="font-semibold">Fluente em inglês</span> e com experiencia em línguas derivadas do Latim
+                            </p>
+
+                            <p>Com um olhar <span className="font-semibold">analítico</span>, visando a <span className="font-semibold">inovação</span>, combinando a <span className="font-semibold">técnica</span> e a
+                                <span className="font-semibold"> empatia</span> com os usuários assim trazendo criatividade para entregar
+                                soluções eficazes e experiências marcantes.</p>
+
+                            <p>Como profissional autônomo,
+                                acumulei experiências valiosas como: 
+                            </p>
+                            <p><span className="font-semibold">negociação, vendas e acertividade</span> que hoje são pontos fortes em minhas Skills</p>
+                            
+                        </div>
                     </div>
                 </div>
             </main>
