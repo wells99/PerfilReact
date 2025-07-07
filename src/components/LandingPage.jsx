@@ -9,12 +9,6 @@ import imagem2 from "../assets/persona(2).png"
 
 const LandingPage = () => {
 
-    console.log("/////////////////////////////////////////////////////////////////////////////////////////////////////")
-    console.log("Seja bem vindo")
-    console.log("Para uma melhor performace as renderizações dessa pagina são limitadas a uma quantidadeintencional")
-    console.log("Suficiente para ilustrar ao usuario mas não indeterminada para impactar em menos renderizações indesejadas")
-    console.log("Assim economizando recursos e tornando a pagina mais eficiente")
-    console.log("/////////////////////////////////////////////////////////////////////////////////////////////////////")
     // estado para controlar o índice da frase atual
     const [currentPhraseIndex, setCurrentPhraseIndex] = useState(1);
 
@@ -27,7 +21,7 @@ const LandingPage = () => {
             }
             setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
             i++
-            console.log("Renderização atual:", i, " de 12: Renderização máxima");
+            console.log("Renderização atual:", i, " de 13");
             setTimeout(loopTime, 4000);
         }
 
@@ -167,8 +161,8 @@ const LandingPage = () => {
                     </div>
                     <div id="sobre" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
                         <h2 className="text-xl font-bold text-center mb-2 ">Sobre Mim</h2>
-                        <span>🧑‍💻 </span><h3 className="pb-4 text-md font-semibold">Olá me chamo Wellington</h3>
-                       <div className="flex flex-col w- text-left gap-2">
+                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">Olá, me chamo Wellington 🧑‍💻</h3> 
+                       <div className="flex flex-col w- text-left gap-2 lg:text-lg">
                          <p>
                             Tenho 26 anos e mais de cinco anos de experiência em suporte técnico, atualmente adquirindo habilidades como Desenvolvedor Júnior com uma sólida trajetória em tecnologia e atendimento ao cliente.</p>
                         <p><span className="font-semibold">Fluente em inglês</span> e com experiencia em línguas derivadas do Latim
