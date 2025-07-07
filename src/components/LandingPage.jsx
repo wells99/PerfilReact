@@ -8,26 +8,27 @@ import imagem1 from "../assets/persona(1).png"
 import imagem2 from "../assets/persona(2).png"
 
 const LandingPage = () => {
-    // Mantemos loopNum e isDeleting se você precisar deles para outras animações de texto
-    const [loopNum, setLoopNum] = useState(0);
-    const [isDeleting, setIsDeleting] = useState(false);
 
-    // Novo estado para controlar o índice do SVG atual
-    const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
-    // Efeito para mudar o SVG a cada 5 segundos
+    // estado para controlar o índice da frase atual
+    const [currentPhraseIndex, setCurrentPhraseIndex] = useState(1);
+
     useEffect(() => {
-        // Define um intervalo para mudar o SVG
-        const intervalId = setInterval(() => {
-            setCurrentPhraseIndex((prevIndex) => {
-                // Calcula o próximo índice, voltando a 0 se chegar ao final do array
-                return (prevIndex + 1) % phrases.length;
-            });
-        }, 5000); // 5000 milissegundos = 5 segundos
+ 
+        let i = 1 
+        const loopTime = () => {
+            if (i > 12){
+                return;
+            }
+             setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+             i++
+             console.log("número atual:", i);
+             setTimeout(loopTime,4000);             
+        }
 
-        // Limpa o intervalo quando o componente é desmontado ou o efeito é re-executado
-        return () => clearInterval(intervalId);
-    }, []); // O array de dependências vazio garante que este efeito seja executado apenas uma vez (na montagem)
+        loopTime()
+
+    }, []); 
 
     return (
         <>
