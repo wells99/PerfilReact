@@ -9,7 +9,10 @@ import imagem2 from "../assets/persona(2).png"
 
 const LandingPage = () => {
 
-
+    console.log("Seja bem vindo")
+    console.log("Para uma melhor performace as renderizações dessa pagina são limitadas a uma quantidadeintencional")
+    console.log("Suficiente para ilustrar ao usuario mas não indeterminada para impactar em menos renderizações indesejadas")
+    console.log("Assim economizando recursos e tornando a pagina mais eficiente")
     // estado para controlar o índice da frase atual
     const [currentPhraseIndex, setCurrentPhraseIndex] = useState(1);
 
@@ -22,7 +25,7 @@ const LandingPage = () => {
             }
              setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
              i++
-             console.log("número atual:", i);
+             console.log("Renderização atual:", i, "12: Renderização máxima");
              setTimeout(loopTime,4000);             
         }
 
