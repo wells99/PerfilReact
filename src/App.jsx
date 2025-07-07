@@ -1,4 +1,5 @@
 import LandingPage from "./components/LandingPage";
+import { Analytics } from "@vercel/analytics/react"
 const App = () => {
   
       console.log("////////////////////////////////////////////////")
@@ -10,6 +11,8 @@ const App = () => {
   return (
     <>
       <LandingPage />
+      <Analytics />
+
     </>
   );
 }
