@@ -126,11 +126,10 @@ const LandingPage = () => {
                                     <p className="px-1 py-1 bg-green-500 rounded border border-green-700">NODE</p>
                                 </div>
                                 <div className="w-full text-sm leading-relaxed">
-                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
-                                    <p>Transposição de um app funcional em produção de um servidor para uma máquina local</p>
-                                    <p>Ajustes de um serviço de arquivos estilo S3 da Amazon chamado</p>
-                                    <p>WASABI STORAGE com RCLONE para servir os vídeos ao app</p>
-                                    <p>Backup e transferência para nova hospedagem com rotina de update</p>
+                              <p>Landing page de uma cafeteria, focando nos produtos mais vendidos para passar  </p>
+                              <p>a sofisticação e o cuidado para seus clientes.</p>
+                              <p>esse é um prototipo mas no que foi hospedado para o cliente também inseri a tag do google</p>
+                              <p>para analise avaliação do público.</p>
                                 </div>
                             </div>
                         </div>
