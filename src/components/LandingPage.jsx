@@ -9,29 +9,31 @@ import imagem2 from "../assets/persona(2).png"
 
 const LandingPage = () => {
 
+    console.log("/////////////////////////////////////////////////////////////////////////////////////////////////////")
     console.log("Seja bem vindo")
     console.log("Para uma melhor performace as renderizações dessa pagina são limitadas a uma quantidadeintencional")
     console.log("Suficiente para ilustrar ao usuario mas não indeterminada para impactar em menos renderizações indesejadas")
     console.log("Assim economizando recursos e tornando a pagina mais eficiente")
+    console.log("/////////////////////////////////////////////////////////////////////////////////////////////////////")
     // estado para controlar o índice da frase atual
     const [currentPhraseIndex, setCurrentPhraseIndex] = useState(1);
 
     useEffect(() => {
- 
-        let i = 1 
+
+        let i = 1
         const loopTime = () => {
-            if (i > 12){
+            if (i > 12) {
                 return;
             }
-             setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-             i++
-             console.log("Renderização atual:", i, "12: Renderização máxima");
-             setTimeout(loopTime,4000);             
+            setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+            i++
+            console.log("Renderização atual:", i, " de 12: Renderização máxima");
+            setTimeout(loopTime, 4000);
         }
 
         loopTime()
 
-    }, []); 
+    }, []);
 
     return (
         <>
@@ -39,13 +41,13 @@ const LandingPage = () => {
                 <div className="font-bold flex flex-col justify-center items-center gap-2">
                     <span className="text-blue-900">Well</span>
                 </div>
-
                 <div className="flex items-center justify-evenly gap-4 text-md font-semibold">
-                    <a href="#sobre">
-                        <p className="hover:text-blue-500 hover:cursor-pointer text-nowrap">Sobre mim</p>
-                    </a>
+
                     <a href="#projetos">
                         <p className="hover:text-blue-500 hover:cursor-pointer">Projetos</p>
+                    </a>
+                    <a href="#sobre">
+                        <p className="hover:text-blue-500 hover:cursor-pointer text-nowrap">Sobre</p>
                     </a>
                     <a href="#services">
                         <p className="hover:text-blue-500 hover:cursor-pointer">Serviços</p>
@@ -153,18 +155,32 @@ const LandingPage = () => {
                                 </a>
                             </div>
                             <div id="tecnologias" className="flex flex-row gap-2 h-8">
-                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-800">WordPress</p>
-                                <p className="px-1 py-1 bg-pink-500 rounded border border-pink-600">PHP</p>
-                                <p className="px-1 py-1 rounded border border-blue-600">Docker</p>
-                                <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">FireBase</p>
+                                <p className="px-1 py-1 bg-blue-500 rounded border border-blue-800">React</p>
+                                <p className="px-1 py-1 bg-pink-500 rounded border border-pink-600">TailwindHP</p>
+                                <p className="px-1 py-1 rounded border border-blue-600">Git</p>
+                                {/* <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">FireBase</p> */}
                             </div>
                             <div id="descricaoDoProjeto" >
                                 <p>Landing Page de uma cafeteria focando nos produtos mais vendidos.</p>
                             </div>
                         </div>
                     </div>
-                    <div id="sobre" className="bg-black text-white px-20 py-8 text-left w-full">
+                    <div id="sobre" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
                         <h2 className="text-xl font-bold text-center mb-2 ">Sobre Mim</h2>
+                        <span>🧑‍💻 </span><h3 className="pb-4 text-md font-semibold">Olá me chamo Wellington</h3>
+                       <div className="flex flex-col w- text-left gap-2">
+                         <p>
+                            Tenho 26 anos e mais de cinco anos de experiência em suporte técnico, atualmente adquirindo habilidades como Desenvolvedor Júnior com uma sólida trajetória em tecnologia e atendimento ao cliente.</p>
+                        <p><span className="font-semibold">Fluente em inglês</span> e com experiencia em línguas derivadas do Latim
+                        </p>
+                        <p>Como profissional autônomo,
+                            acumulei experiências valiosas em negociação, vendas,
+                            diagnóstico e reparo de dispositivos móveis e computadores.
+                        </p>
+                        <p>Com um olhar <span className="font-semibold">analítico</span>, visando a <span className="font-semibold">inovação</span>, combinando a <span className="font-semibold">técnica</span> e a 
+                            <span className="font-semibold"> empatia</span> com os usuários assim trazendo criatividade para entregar
+                            soluções eficazes e experiências marcantes.</p>
+                       </div>
                     </div>
                 </div>
             </main>
