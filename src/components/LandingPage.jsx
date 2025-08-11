@@ -88,7 +88,7 @@ const LandingPage = () => {
 
                         <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
                             <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="https://tocaplay.online/" target="blank">
+                                <a href="https://videos.wmcentralapps.online" target="blank">
                                     <img src={jellyfin} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
@@ -137,7 +137,7 @@ const LandingPage = () => {
 
                         <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
                             <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="#" target="blank">
+                                <a href="https://mapos.wmcentralapps.online/" target="blank">
                                     <img src={mapos} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
