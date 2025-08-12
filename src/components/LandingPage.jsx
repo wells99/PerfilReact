@@ -137,7 +137,7 @@ const LandingPage = () => {
 
                         <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
                             <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="https://mapos.wmcentralapps.online/" target="blank">
+                                <a href="https://maposs.wmcentralapps.online/" target="blank">
                                     <img src={mapos} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
@@ -149,7 +149,7 @@ const LandingPage = () => {
                                     <p className="px-1 py-1 bg-pink-500 rounded border border-pink-700">PHP</p>
                                 </div>
                                 <div className="w-full text-sm leading-relaxed">
-                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> portfolio@email.com | <span className="text-neutral-500">Senha:</span> Contratado</p>
                                     <p>Implementação de sistema Open Source de gerenciamento de Ordens de Serviço e Vendas</p>
                                     <p>Esse sistema usa banco de dados relacional mySQL, PHP e JQuery</p>
                                     <p>Além da Implementação desse sistema em uma hospedagem compartilhada o cliente</p>
@@ -198,6 +198,64 @@ const LandingPage = () => {
                                 acumulei experiências valiosas como: 
                             </p>
                             <p><span className="font-semibold">negociação, vendas e acertividade</span> que hoje são pontos fortes em minhas Skills</p>
+                            
+                        </div>
+                    </div>
+
+                    <div id="services" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
+                        <h2 className="text-xl font-bold text-center mb-2 ">Serviços</h2>
+                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">-- Sistemas de Gestão</h3>
+                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
+                            <p>
+                               Organize sua empresa, seus funcionários e a papelada em um unico lugar, acessível de onde estiver e tenha metricas 
+                               de como está o seu negócio em tempo real.
+                            </p>
+                        </div>
+
+                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">-- Automações</h3>
+                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
+                            <p>
+                               Automatizando seu fluxo de trabalho para que você possa focar nos pontos mais importantes do seu negócio.
+                            </p>
+                               <p>-- Tenha seu próprio Agente de Ia</p> 
+                               <p>-- ChatBot do Whatsapp</p> 
+                               <p>-- Atomações para Instagram</p> 
+                               <p>-- Planilhas do Google Sheets</p> 
+                               <p>-- Agenda do Google</p> 
+                        </div>
+
+
+                          <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">-- Landing Page</h3>
+                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
+                            <p>
+                               Tenha uma página na internet e não perca mais clientes, os profissionais já entenderam
+                            </p>
+                            <p>Na sua pagina pessoal você captura leeds, ganha inteligencia com as metricas e consegue evoluir o resultado com as informações de quem visitou a sua página</p>
+                            <p>Entenda melhor o seu cliente e vai vender mais, sejá na hora da propaganda paga ou ao separar o perfil de quem consome mais ou menos</p>
+                            <p>a Landing Page é onde tudo começa.</p>
+                        </div>
+
+                    </div>
+
+                    <div id="skills" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
+                        <h2 className="text-xl font-bold text-center mb-2 ">Habilidades</h2>
+                        <div className="flex flex-row text-left gap-2 lg:text-lg">
+                            <p>Javascript</p>
+                            <p>PHP</p>
+                            <p>CSS</p>
+                            <p>TailWind</p>
+                            <p>React</p>
+                            <p>Node</p>
+                            <p>Docker</p>
+                            <p>Vim</p>
+                            <p>Nano</p>
+                            <p>SSH</p>
+                            <p>HTML</p>
+                            <p>Git</p>
+                            <p>MySQL</p>
+                            <p>FireBase</p>
+                            <p>MongoDB</p>
+                            <p>Postgres</p>
                             
                         </div>
                     </div>
