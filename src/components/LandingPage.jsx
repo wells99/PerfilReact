@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import cafeteria from "../assets/cafeteria.png";
 import jellyfin from "../assets/jellyfinn.png";
 import mapos from "../assets/mapos.png";
-import todo from "../assets/ToDo.png";
+import agereflow from "../assets/agereflow.png";
 import phrases from "../components/utils/frases";
 import imagem1 from "../assets/persona(1).png"
 import imagem2 from "../assets/persona(2).png"
+import SkillsRow from "./components/SkillsRow";
 
 const LandingPage = () => {
 
@@ -21,7 +22,6 @@ const LandingPage = () => {
             }
             setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
             i++
-            console.log("Renderização atual:", i, " de 13");
             setTimeout(loopTime, 4000);
         }
 
@@ -29,6 +29,7 @@ const LandingPage = () => {
 
     }, []);
 
+ 
     return (
         <>
             <nav className="bg-black min-w-screen border-b border-gray-800 text-white flex justify-between h-20 items-center px-4">
@@ -98,7 +99,7 @@ const LandingPage = () => {
                                     <p className="px-1 py-1 bg-purple-600 rounded border border-purple-800">C#</p>
                                     <p className="px-1 py-1 bg-red-800 rounded border border-red-900">VIM</p>
                                     <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">LinuxServer</p>
-                                    <p className="px-1 py-1 rounded border border-blue-600">Docker</p>
+                                    <p className="px-1 py-1 rounded border border-black bg-blue-600">Docker</p>
                                 </div>
                                 <div className="w-full text-sm leading-relaxed">
                                     <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
@@ -126,10 +127,10 @@ const LandingPage = () => {
                                     <p className="px-1 py-1 bg-green-500 rounded border border-green-700">NODE</p>
                                 </div>
                                 <div className="w-full text-sm leading-relaxed">
-                              <p>Landing page de uma cafeteria, focando nos produtos mais vendidos para passar  </p>
-                              <p>a sofisticação e o cuidado para seus clientes.</p>
-                              <p>esse é um prototipo mas no que foi hospedado para o cliente também inseri a tag do google</p>
-                              <p>para analise avaliação do público.</p>
+                                    <p>Landing page de uma cafeteria, focando nos produtos mais vendidos para passar  </p>
+                                    <p>a sofisticação e o cuidado para seus clientes.</p>
+                                    <p>esse é um prototipo mas no que foi hospedado para o cliente também inseri a tag do google</p>
+                                    <p>para analise avaliação do público.</p>
                                 </div>
                             </div>
                         </div>
@@ -149,7 +150,7 @@ const LandingPage = () => {
                                     <p className="px-1 py-1 bg-pink-500 rounded border border-pink-700">PHP</p>
                                 </div>
                                 <div className="w-full text-sm leading-relaxed">
-                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> portfolio@email.com | <span className="text-neutral-500">Senha:</span> Contratado</p>
+                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
                                     <p>Implementação de sistema Open Source de gerenciamento de Ordens de Serviço e Vendas</p>
                                     <p>Esse sistema usa banco de dados relacional mySQL, PHP e JQuery</p>
                                     <p>Além da Implementação desse sistema em uma hospedagem compartilhada o cliente</p>
@@ -162,8 +163,8 @@ const LandingPage = () => {
 
                         <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
                             <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="https://to-do-react-umber-pi.vercel.app/" target="blank">
-                                    <img src={todo} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
+                                <a href="https://agereflow.vercel.app/" target="blank">
+                                    <img src={agereflow} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
                                 </a>
                             </div>
                             <div className="flex flex-col justify-start w-full">
@@ -173,8 +174,8 @@ const LandingPage = () => {
                                     <p className="px-1 py-1 rounded border border-blue-600">Git</p>
                                 </div>
                                 <div className="w-full text-sm leading-relaxed">
-                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
-                                    <p>Um ToDo descontraído para anotações básicas utilizando de local storage feito em React, com tailwind e Git para futuros upgrades</p>  
+                                    <p>Sistema de automação para empresas, agilizando processos, treinando e configurando a IA para atender os clientes e se adaptar aos processos da empresa</p>
+                                    <p>Integração com Whatsapp, Redis, Google Agenda, Armazenamento S3, Docker e diversas tecnológias de ponta para suprir as mais diferentes implementações.</p>
                                 </div>
                             </div>
                         </div>
@@ -195,40 +196,40 @@ const LandingPage = () => {
                                 soluções eficazes e experiências marcantes.</p>
 
                             <p>Como profissional autônomo,
-                                acumulei experiências valiosas como: 
+                                acumulei experiências valiosas como:
                             </p>
                             <p><span className="font-semibold">negociação, vendas e acertividade</span> que hoje são pontos fortes em minhas Skills</p>
-                            
+
                         </div>
                     </div>
 
                     <div id="services" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
                         <h2 className="text-xl font-bold text-center mb-2 ">Serviços</h2>
-                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">-- Sistemas de Gestão</h3>
+                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">📈 Sistemas de Gestão</h3>
                         <div className="flex flex-col w- text-left gap-2 lg:text-lg">
                             <p>
-                               Organize sua empresa, seus funcionários e a papelada em um unico lugar, acessível de onde estiver e tenha metricas 
-                               de como está o seu negócio em tempo real.
+                                Organize sua empresa, seus funcionários e a papelada em um unico lugar, acessível de onde estiver e tenha metricas
+                                de como está o seu negócio em tempo real.
                             </p>
                         </div>
 
-                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">-- Automações</h3>
+                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">⚙️Automações</h3>
                         <div className="flex flex-col w- text-left gap-2 lg:text-lg">
                             <p>
-                               Automatizando seu fluxo de trabalho para que você possa focar nos pontos mais importantes do seu negócio.
+                                Automatizando seu fluxo de trabalho para que você possa focar nos pontos mais importantes do seu negócio.
                             </p>
-                               <p>-- Tenha seu próprio Agente de Ia</p> 
-                               <p>-- ChatBot do Whatsapp</p> 
-                               <p>-- Atomações para Instagram</p> 
-                               <p>-- Planilhas do Google Sheets</p> 
-                               <p>-- Agenda do Google</p> 
+                            <p>🤖 Tenha seu próprio Agente de Ia</p>
+                            <p>☎️ ChatBot do Whatsapp</p>
+                            <p>📱 Atomações para Instagram</p>
+                            <p>📗 Planilhas do Google Sheets</p>
+                            <p>📆 Agenda do Google</p>
                         </div>
 
 
-                          <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">-- Landing Page</h3>
+                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">🎯 Landing Page</h3>
                         <div className="flex flex-col w- text-left gap-2 lg:text-lg">
                             <p>
-                               Tenha uma página na internet e não perca mais clientes, os profissionais já entenderam
+                                Tenha uma página na internet e não perca mais clientes, os profissionais já entenderam
                             </p>
                             <p>Na sua pagina pessoal você captura leeds, ganha inteligencia com as metricas e consegue evoluir o resultado com as informações de quem visitou a sua página</p>
                             <p>Entenda melhor o seu cliente e vai vender mais, sejá na hora da propaganda paga ou ao separar o perfil de quem consome mais ou menos</p>
@@ -237,28 +238,7 @@ const LandingPage = () => {
 
                     </div>
 
-                    <div id="skills" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
-                        <h2 className="text-xl font-bold text-center mb-2 ">Habilidades</h2>
-                        <div className="flex flex-row text-left gap-2 lg:text-lg">
-                            <p>Javascript</p>
-                            <p>PHP</p>
-                            <p>CSS</p>
-                            <p>TailWind</p>
-                            <p>React</p>
-                            <p>Node</p>
-                            <p>Docker</p>
-                            <p>Vim</p>
-                            <p>Nano</p>
-                            <p>SSH</p>
-                            <p>HTML</p>
-                            <p>Git</p>
-                            <p>MySQL</p>
-                            <p>FireBase</p>
-                            <p>MongoDB</p>
-                            <p>Postgres</p>
-                            
-                        </div>
-                    </div>
+                    <SkillsRow  />
                 </div>
             </main>
         </>

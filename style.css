@@ -1,24 +1,50 @@
+/* sua animação existente (ok) */
 svg path {
-fill: transparent;
-stroke: rgba(255, 255, 255, 0.7);
-stroke-width: 0.3;
-stroke-dasharray: 220;
-stroke-dashoffset: 220;
-animation: textAnimation 2s ease-in-out 1 forwards;
+  fill: transparent;
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 0.8;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  animation: textAnimation 2s ease-in-out 1 forwards;
+}
+@keyframes textAnimation {
+  0% { stroke-dashoffset: 220; }
+  50% { stroke-dashoffset: 110; }
+  80% { stroke-dashoffset: 54; }
+  100% { stroke-dashoffset: 0; }
 }
 
-@keyframes textAnimation {
-    0% {
-        stroke-dashoffset: 220;
-    }
-     50% {
-        stroke-dashoffset: 110;
-    }
-    80% {
-        stroke-dashoffset: 54;
-    }
-    100% {
-        stroke-dashoffset: 0;
-        
-    }
+/* marquee */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* wrapper do marquee */
+.marquee {
+  display: flex;          /* mantém os blocos lado a lado */
+  overflow: hidden;       /* esconde o que sai da área */
+  width: 100%;
+}
+
+/* cada “pedaço” duplicado do conteúdo */
+.marquee__content {
+  display: flex;
+  align-items: center;
+  gap: 2rem;              /* espaço entre as tags <p> */
+  white-space: nowrap;
+  flex-shrink: 0;         /* não encolher */
+  min-width: 100%;        /* cada bloco ocupa 100% da largura */
+  will-change: transform; /* performance */
+  animation: scroll 20s linear infinite;
+}
+
+/* velocidade maior em telas grandes (opcional) */
+@media (min-width: 1024px) {
+  .marquee__content { animation-duration: 10s; }
+}
+
+/* pausar no hover (opcional) */
+.marquee:hover .marquee__content {
+  animation-play-state: paused;
 }
