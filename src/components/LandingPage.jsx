@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import cafeteria from "../assets/cafeteria.png";
-import jellyfin from "../assets/jellyfinn.png";
-import mapos from "../assets/mapos.png";
+import cardapio from "../assets/cardapio.png";
+// import mapos from "../assets/mapos.png";
 import agereflow from "../assets/agereflow.png";
 import imagem1 from "../assets/persona(1).png";
 import imagem2 from "../assets/persona(2).png";
@@ -9,17 +9,16 @@ import phrases from "../components/utils/frases";
 import SkillsRow from "./components/SkillsRow";
 
 const projects = [
-//   {
-//     img: jellyfin,
-//     link: "https://videos.wmcentralapps.online",
-//     tags: ["VPS", "C#", "VIM", "LinuxServer", "Docker"],
-//     desc: [
-//       "Usuário: Portfolio | Senha: Contratado",
-//       "Transposição de um app funcional em produção de um servidor para uma máquina local",
-//       "Ajustes de um serviço de arquivos estilo S3 da Amazon (Wasabi Storage) com Rclone para servir vídeos ao app",
-//       "Backup e transferência para nova hospedagem com rotina de update",
-//     ],
-//   },
+  {
+    img: cardapio,
+    link: "https://front-cardapio-one.vercel.app/",
+    tags: ["React", "Tailwind", "Node", "Express", "Docker"],
+    desc: [
+      "Sistema de cardápio digital para restaurantes com painel administrativo." ,
+      "no estilo microserviços, com front-end e back-end separados.",
+      "feito para auxiliar o restaurante na gestão de seus produtos e pedidos na mesa.",
+    ],
+  },
   {
     img: cafeteria,
     link: "https://coffe-cafe-taupe.vercel.app/",

@@ -1,6 +1,6 @@
 export default function SkilSkillsRowls() {
   const skills = [
-    " Javascript ","PHP","CSS","TailWind","React","Node","Docker",
+    " Javascript ","PHP","CSS","Tailwind","React","Node","Docker",
     "Vim","Nano","SSH","HTML","Git","MySQL","FireBase","MongoDB"," Postgres "
   ];
 
