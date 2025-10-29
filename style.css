@@ -1,4 +1,8 @@
-/* sua animação existente (ok) */
+html {
+  scroll-behavior: smooth;
+}
+
+
 svg path {
   fill: transparent;
   stroke: rgba(255, 255, 255, 0.7);

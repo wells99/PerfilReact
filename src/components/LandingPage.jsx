@@ -3,246 +3,214 @@ import cafeteria from "../assets/cafeteria.png";
 import jellyfin from "../assets/jellyfinn.png";
 import mapos from "../assets/mapos.png";
 import agereflow from "../assets/agereflow.png";
+import imagem1 from "../assets/persona(1).png";
+import imagem2 from "../assets/persona(2).png";
 import phrases from "../components/utils/frases";
-import imagem1 from "../assets/persona(1).png"
-import imagem2 from "../assets/persona(2).png"
 import SkillsRow from "./components/SkillsRow";
 
-const LandingPage = () => {
+const projects = [
+//   {
+//     img: jellyfin,
+//     link: "https://videos.wmcentralapps.online",
+//     tags: ["VPS", "C#", "VIM", "LinuxServer", "Docker"],
+//     desc: [
+//       "Usuário: Portfolio | Senha: Contratado",
+//       "Transposição de um app funcional em produção de um servidor para uma máquina local",
+//       "Ajustes de um serviço de arquivos estilo S3 da Amazon (Wasabi Storage) com Rclone para servir vídeos ao app",
+//       "Backup e transferência para nova hospedagem com rotina de update",
+//     ],
+//   },
+  {
+    img: cafeteria,
+    link: "https://coffe-cafe-taupe.vercel.app/",
+    tags: ["HTML", "JAVASCRIPT", "TAILWIND", "CSS", "NODE"],
+    desc: [
+      "Landing page de uma cafeteria focada em produtos mais vendidos, passando sofisticação e cuidado.",
+      "Prototipo hospedado com tag do Google para análise de público e métricas.",
+    ],
+  },
+//   {
+//     img: mapos,
+//     link: "https://maposs.wmcentralapps.online/",
+//     tags: ["HTML", "mySQL", "JQuery", "PHP"],
+//     desc: [
+//       "Usuário: Portfolio | Senha: Contratado",
+//       "Implementação de sistema open source de OS e vendas (MapOS).",
+//       "Banco de dados relacional MySQL + PHP + JQuery.",
+//       "Automação de fluxos e manipulação de rotas JQuery conforme necessidade do cliente.",
+//     ],
+//   },
+  {
+    img: agereflow,
+    link: "https://agereflow.vercel.app/",
+    tags: ["HTML", "TAILWIND", "Git", "JAVASCRIPT", "Docker"],
+    desc: [
+      "Sistema de automação para empresas com IA personalizada.",
+      "Integração com WhatsApp, Redis, Google Agenda e armazenamento S3 em Docker.",
+    ],
+  },
+];
 
-    // estado para controlar o índice da frase atual
-    const [currentPhraseIndex, setCurrentPhraseIndex] = useState(1);
+export default function LandingPage() {
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
-    useEffect(() => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhraseIndex((prev) => (prev + 1) % phrases.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
-        let i = 1
-        const loopTime = () => {
-            if (i > 12) {
-                return;
-            }
-            setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-            i++
-            setTimeout(loopTime, 4000);
-        }
+  return (
+    <>
+      {/* Navbar */}
+      <nav className="bg-black border-b border-gray-800 text-white flex justify-between h-20 items-center px-4">
+        <span className="text-blue-900 font-bold text-2xl">Well</span>
+        <div className="flex gap-4 font-semibold">
+          {["Projetos", "Sobre", "Serviços", "Skills"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="hover:text-blue-500 transition-colors"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      </nav>
 
-        loopTime()
+      {/* Main */}
+      <main className="bg-black text-white">
+        {/* Hero */}
+        <section className="flex flex-col lg:flex-row items-center justify-center gap-8 pt-10">
+          <img src={imagem2} alt="eu" className="w-60 md:w-0" />
 
-    }, []);
+          <div className="text-center md:text-left">
+            <p className="text-xl mb-2">Transformando seu projeto em</p>
+            <svg
+              key={phrases[currentPhraseIndex].nome}
+              height="50"
+              viewBox={`0 0 ${phrases[currentPhraseIndex].box} 50`}
+              xmlns="http://www.w3.org/2000/svg"
+              className="pl-16 lg:pl-0 max-w-full"
+            >
+              {phrases[currentPhraseIndex].svg}
+            </svg>
+            <div className="mt-8">
+              <a
+                href="https://wa.me/5585994306038?text=Vi%20seu%20portf%C3%B3lio%2C%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas."
+                target="_blank"
+                className="bg-blue-700 hover:bg-blue-600/80 px-4 py-2 rounded-md font-semibold inline-block transition-transform hover:scale-105"
+              >
+                Vamos conversar
+              </a>
+            </div>
+          </div>
 
- 
-    return (
-        <>
-            <nav className="bg-black min-w-screen border-b border-gray-800 text-white flex justify-between h-20 items-center px-4">
-                <div className="font-bold flex flex-col justify-center items-center gap-2">
-                    <span className="text-blue-900">Well</span>
+          <img src={imagem1} alt="eu" className="w-0 lg:w-40" />
+        </section>
+
+        {/* Projetos */}
+        <section id="projetos" className="px-10 py-10">
+          <h2 className="text-xl font-bold text-center mb-10">Projetos</h2>
+          <div className="flex flex-col gap-8 items-center">
+            {projects.map(({ img, link, tags, desc }, i) => (
+              <div
+                key={i}
+                className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl"
+              >
+                <a href={link} target="_blank" className="w-full lg:w-[300px]">
+                  <img
+                    src={img}
+                    alt="projeto"
+                    className="rounded-lg w-full h-[200px] object-cover"
+                  />
+                </a>
+                <div className="flex flex-col">
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-1 py-1 rounded border border-gray-700 bg-blue-700/40"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="text-sm leading-relaxed">
+                    {desc.map((line, j) => (
+                      <p key={j}>{line}</p>
+                    ))}
+                  </div>
                 </div>
-                <div className="flex items-center justify-evenly gap-4 text-md font-semibold">
+              </div>
+            ))}
+          </div>
+        </section>
 
-                    <a href="#projetos">
-                        <p className="hover:text-blue-500 hover:cursor-pointer">Projetos</p>
-                    </a>
-                    <a href="#sobre">
-                        <p className="hover:text-blue-500 hover:cursor-pointer text-nowrap">Sobre</p>
-                    </a>
-                    <a href="#services">
-                        <p className="hover:text-blue-500 hover:cursor-pointer">Serviços</p>
-                    </a>
-                    <a href="#skills">
-                        <p className="hover:text-blue-500 hover:cursor-pointer">Skills</p>
-                    </a>
-                </div>
-            </nav>
+        {/* Sobre */}
+        <section
+          id="sobre"
+          className="px-10 lg:px-20 py-8 flex flex-col lg:w-3/4 mx-auto"
+        >
+          <h2 className="text-xl font-bold text-center mb-4">Sobre Mim</h2>
+          <h3 className="text-2xl font-semibold mb-4">
+            Olá, me chamo Wellington 🧑‍💻
+          </h3>
+          <div className="space-y-2 text-lg leading-relaxed">
+            <p>
+              Tenho 26 anos e mais de cinco anos de experiência em suporte
+              técnico, atualmente adquirindo habilidades como Desenvolvedor
+              Júnior com sólida trajetória em tecnologia e atendimento ao
+              cliente.
+            </p>
+            <p>
+              <strong>Fluente em inglês</strong> e com experiência em línguas
+              derivadas do Latim.
+            </p>
+            <p>
+              Com um olhar <strong>analítico</strong>, visando a{" "}
+              <strong>inovação</strong>, combinando <strong>técnica</strong> e{" "}
+              <strong>empatia</strong> com os usuários para entregar soluções
+              eficazes e experiências marcantes.
+            </p>
+            <p>
+              Como profissional autônomo, acumulei experiências em{" "}
+              <strong>negociação, vendas e assertividade</strong> — hoje pontos
+              fortes nas minhas skills.
+            </p>
+          </div>
+        </section>
 
-            <main>
-                <div className="w-full flex text-white">
-                    <div id="left" className="w-full  pt-10 bg-black outline-none flex flex-col gap-8">
-                        <div className="w-full flex flex-col lg:flex-row md:gap-8 items-center justify-center ">
-                            <img src={imagem2} alt="eu" className="w-60 md:w-0" />
-                            <div className="flex flex-col items-center justify-center md:items-start px-2">
-                                <p className=" text-white text-xl mb-2">Transformando seu projeto em </p>
-                                <svg key={phrases[currentPhraseIndex].nome}
-                                    height="50"
-                                    viewBox={`0 0 ${phrases[currentPhraseIndex].box} 50`}
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    className={`block md:pl-0 md:px-auto max-w-full pl-${phrases[currentPhraseIndex].opl}`}
-                                >
-                                    {phrases[currentPhraseIndex].svg}
-                                </svg>
+        {/* Serviços */}
+        <section
+          id="serviços"
+          className="px-10 lg:px-20 py-8 flex flex-col lg:w-3/4 mx-auto"
+        >
+          <h2 className="text-xl font-bold text-center mb-4">Serviços</h2>
+          {[
+            {
+              title: "📈 Sistemas de Gestão",
+              text: "Organize sua empresa e tenha métricas em tempo real, tudo acessível de onde estiver.",
+            },
+            {
+              title: "⚙️ Automações",
+              text: "Automatize seu fluxo de trabalho e tenha mais tempo para o que importa. 🤖 WhatsApp Bot, Instagram, Google Sheets, Agenda e muito mais.",
+            },
+            {
+              title: "🎯 Landing Page",
+              text: "Tenha sua página na internet para captar leads, entender seu público e vender mais. É onde tudo começa.",
+            },
+          ].map((service, i) => (
+            <div key={i} className="mb-6">
+              <h3 className="text-2xl font-semibold mb-2">{service.title}</h3>
+              <p className="text-lg leading-relaxed">{service.text}</p>
+            </div>
+          ))}
+        </section>
 
-                                <div className="w-34 mt-8 ">
-                                    <button className="bg-blue-700 hover:bg-blue-600/80 hover:scale-105 shadow-green-800 px-4 py-2 rounded-md font-semibold duratio">
-                                        <a href="https://wa.me/5585994306038?text=Vi%20seu%20portf%C3%B3lio%2C%20gostaria%20de%20tirar%20algumas%20d%C3%BAvidas.">Vamos conversar</a>
-                                    </button>
-                                </div>
-                            </div>
-                            <img src={imagem1} alt="eu" className="w-0 lg:w-40" />
-                        </div>
-
-                    </div>
-                </div>
-
-                <div className="w-full px-20 py-10 bg-black text-white" id="projetos">
-                    <h2 className="text-xl font-bold text-center mb-10 ">Projetos</h2>
-
-                    <div className="flex flex-col gap-4 items-center justify-center w-full ">
-
-                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
-                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="https://videos.wmcentralapps.online" target="blank">
-                                    <img src={jellyfin} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
-                                </a>
-                            </div>
-                            <div className="flex flex-col justify-start w-full">
-                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
-                                    <p className="px-1 py-1 bg-red-700 rounded border border-red-900">VPS</p>
-                                    <p className="px-1 py-1 bg-purple-600 rounded border border-purple-800">C#</p>
-                                    <p className="px-1 py-1 bg-red-800 rounded border border-red-900">VIM</p>
-                                    <p className="px-1 py-1 bg-orange-500 rounded border border-orange-700">LinuxServer</p>
-                                    <p className="px-1 py-1 rounded border border-black bg-blue-600">Docker</p>
-                                </div>
-                                <div className="w-full text-sm leading-relaxed">
-                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
-                                    <p>Transposição de um app funcional em produção de um servidor para uma máquina local</p>
-                                    <p>Ajustes de um serviço de arquivos estilo S3 da Amazon chamado</p>
-                                    <p>WASABI STORAGE com RCLONE para servir os vídeos ao app</p>
-                                    <p>Backup e transferência para nova hospedagem com rotina de update</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
-                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="https://coffe-cafe-taupe.vercel.app/" target="blank">
-                                    <img src={cafeteria} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
-                                </a>
-                            </div>
-                            <div className="flex flex-col justify-start w-full">
-                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
-                                    <p className="px-1 py-1 bg-orange-500 rounded border border-orange-500">HTML</p>
-                                    <p className="px-1 py-1 bg-yellow-500  rounded border border-yellow-800">JAVASCRIPT</p>
-                                    <p className="px-1 py-1 bg-blue-500 rounded border border-blue-500">TAILWIND</p>
-                                    <p className="px-1 py-1 bg-blue-500 rounded border border-blue-700">CSS</p>
-                                    <p className="px-1 py-1 bg-green-500 rounded border border-green-700">NODE</p>
-                                </div>
-                                <div className="w-full text-sm leading-relaxed">
-                                    <p>Landing page de uma cafeteria, focando nos produtos mais vendidos para passar  </p>
-                                    <p>a sofisticação e o cuidado para seus clientes.</p>
-                                    <p>esse é um prototipo mas no que foi hospedado para o cliente também inseri a tag do google</p>
-                                    <p>para analise avaliação do público.</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
-                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="https://maposs.wmcentralapps.online/" target="blank">
-                                    <img src={mapos} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
-                                </a>
-                            </div>
-                            <div className="flex flex-col justify-start w-full">
-                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
-                                    <p className="px-1 py-1 bg-orange-500 rounded border border-orange-500">HTML</p>
-                                    <p className="px-1 py-1 bg-green-600 rounded border border-green-800">mySQL</p>
-                                    <p className="px-1 py-1 bg-yellow-500 rounded border border-yellow-700">JQuery</p>
-                                    <p className="px-1 py-1 bg-pink-500 rounded border border-pink-700">PHP</p>
-                                </div>
-                                <div className="w-full text-sm leading-relaxed">
-                                    <p><span className="text-neutral-500 text-nowrap">Usuario:</span> Portfolio | <span className="text-neutral-500">Senha:</span> Contratado</p>
-                                    <p>Implementação de sistema Open Source de gerenciamento de Ordens de Serviço e Vendas</p>
-                                    <p>Esse sistema usa banco de dados relacional mySQL, PHP e JQuery</p>
-                                    <p>Além da Implementação desse sistema em uma hospedagem compartilhada o cliente</p>
-                                    <p>Pediu algumas automações para agilizar o fluxo de vendas e cadastro</p>
-                                    <p>apos a leitura e entendimento das requisiçoes em rotas especificas, manipulei o jquery para que atendesse o pedido do cliente</p>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div className="flex flex-col lg:flex-row gap-4 w-full max-w-4xl">
-                            <div id="imgProject" className="w-full lg:w-[300px] flex-shrink-0">
-                                <a href="https://agereflow.vercel.app/" target="blank">
-                                    <img src={agereflow} alt="imagem-projeto" className="rounded-lg w-full h-[200px] object-cover" />
-                                </a>
-                            </div>
-                            <div className="flex flex-col justify-start w-full">
-                                <div className="flex flex-row flex-wrap gap-2 h-auto lg:mb-4">
-                                    <p className="px-1 py-1 bg-blue-700 rounded border border-blue-900">REACT</p>
-                                    <p className="px-1 py-1 bg-blue-500 rounded border border-blue-500">TAILWIND</p>
-                                    <p className="px-1 py-1 rounded border border-blue-600">Git</p>
-                                </div>
-                                <div className="w-full text-sm leading-relaxed">
-                                    <p>Sistema de automação para empresas, agilizando processos, treinando e configurando a IA para atender os clientes e se adaptar aos processos da empresa</p>
-                                    <p>Integração com Whatsapp, Redis, Google Agenda, Armazenamento S3, Docker e diversas tecnológias de ponta para suprir as mais diferentes implementações.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div id="sobre" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
-                        <h2 className="text-xl font-bold text-center mb-2 ">Sobre Mim</h2>
-                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">Olá, me chamo Wellington 🧑‍💻</h3>
-                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
-                            <p>
-                                Tenho 26 anos e mais de cinco anos de experiência em suporte técnico, atualmente adquirindo habilidades como Desenvolvedor Júnior com uma sólida trajetória em tecnologia e atendimento ao cliente.</p>
-                            <p><span className="font-semibold">Fluente em inglês</span> e com experiencia em línguas derivadas do Latim
-                            </p>
-
-                            <p>Com um olhar <span className="font-semibold">analítico</span>, visando a <span className="font-semibold">inovação</span>, combinando a <span className="font-semibold">técnica</span> e a
-                                <span className="font-semibold"> empatia</span> com os usuários assim trazendo criatividade para entregar
-                                soluções eficazes e experiências marcantes.</p>
-
-                            <p>Como profissional autônomo,
-                                acumulei experiências valiosas como:
-                            </p>
-                            <p><span className="font-semibold">negociação, vendas e acertividade</span> que hoje são pontos fortes em minhas Skills</p>
-
-                        </div>
-                    </div>
-
-                    <div id="services" className="bg-black text-white lg:px-20 py-8 flex flex-col w-full text-left lg:w-3/4 gap-1 lg:gap-4">
-                        <h2 className="text-xl font-bold text-center mb-2 ">Serviços</h2>
-                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">📈 Sistemas de Gestão</h3>
-                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
-                            <p>
-                                Organize sua empresa, seus funcionários e a papelada em um unico lugar, acessível de onde estiver e tenha metricas
-                                de como está o seu negócio em tempo real.
-                            </p>
-                        </div>
-
-                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">⚙️Automações</h3>
-                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
-                            <p>
-                                Automatizando seu fluxo de trabalho para que você possa focar nos pontos mais importantes do seu negócio.
-                            </p>
-                            <p>🤖 Tenha seu próprio Agente de Ia</p>
-                            <p>☎️ ChatBot do Whatsapp</p>
-                            <p>📱 Atomações para Instagram</p>
-                            <p>📗 Planilhas do Google Sheets</p>
-                            <p>📆 Agenda do Google</p>
-                        </div>
-
-
-                        <span> </span><h3 className="pb-4 text-md font-semibold text-2xl">🎯 Landing Page</h3>
-                        <div className="flex flex-col w- text-left gap-2 lg:text-lg">
-                            <p>
-                                Tenha uma página na internet e não perca mais clientes, os profissionais já entenderam
-                            </p>
-                            <p>Na sua pagina pessoal você captura leeds, ganha inteligencia com as metricas e consegue evoluir o resultado com as informações de quem visitou a sua página</p>
-                            <p>Entenda melhor o seu cliente e vai vender mais, sejá na hora da propaganda paga ou ao separar o perfil de quem consome mais ou menos</p>
-                            <p>a Landing Page é onde tudo começa.</p>
-                        </div>
-
-                    </div>
-
-                    <SkillsRow  />
-                </div>
-            </main>
-        </>
-    );
-};
-
-export default LandingPage;
+        <SkillsRow />
+      </main>
+    </>
+  );
+}
